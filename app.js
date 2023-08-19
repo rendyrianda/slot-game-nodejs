@@ -7,8 +7,30 @@
 
 const prompt = require("prompt-sync")();
 
+const ROWS = 3;
+const COLS = 3;
 
-// deposit some money
+const SYMBOL_COUNT = {
+    "A":2,
+    "B":4,
+    "C":6,
+    "D":8
+}
+
+
+const SYMBOL_VALUES = {
+    "A":5,
+    "B":4,
+    "C":3,
+    "D":2
+}
+
+
+const spin = () => {
+    const symbols = [];
+    }
+
+
 const deposit = () => {
     while(true){
         const depositAmount = prompt("Masukan Deposit: ");
@@ -39,11 +61,12 @@ const getNumberOfLines = () => {
     }
 }
 
-const getBet = (balance) => {
+const getBet = (balance,lines) => {
     while(true){
-        const bet = prompt("Masukan Total yang akan dipertaruhkan: ");
+        const bet = prompt("Masukan taruhan pada setiap baris: ");
         const totalBet = parseFloat(bet);
-        if(isNaN(totalBet) || totalBet <= 0 || totalBet > balance){
+
+        if(isNaN(totalBet) || totalBet <= 0 || totalBet > balance / lines){
             console.log("Gagal! Coba lagi");
         }
         else{
@@ -52,9 +75,17 @@ const getBet = (balance) => {
     }
 }
 
+
+
+
+
 let balance = deposit();
 const numberOfLines  = getNumberOfLines();
-const bet = getBet(balance);
+const bet = getBet(balance,numberOfLines);
+
+
+
+
 console.log(balance);
 console.log(numberOfLines);
 console.log(bet);
