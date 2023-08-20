@@ -1,10 +1,3 @@
-// determine number lines to bet
-// collect bet amount
-// spin slot machine
-// check if the user won
-// give the prize / taket their bet
-// play again
-
 const prompt = require("prompt-sync")();
 
 const ROWS = 3;
@@ -154,7 +147,7 @@ const game = () => {
         printSlot(trans);
         console.log("Kamu menang $" + winnings);
         balance += winnings;
-        
+
         if(balance <= 0){
             console.log("Uang kamu habis!");
             break;
