@@ -34,7 +34,6 @@ const deposit = () => {
     
 }
 
-// determine number lines to bet
 const getNumberOfLines = () => {
     while(true){
         const lines = prompt("Masukan Baris yang akan dipilih (1-3): ");
